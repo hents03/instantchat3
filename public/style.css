@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-image: url(./IMG_20230527_172047.jpg);
+}
+
+body.dark {
+    background-image:url(./IMG_20230527_172109.jpg);
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.app{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.user-list {
+    margin-top: 20px;
+}
+
+.user-list h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.user-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-list li {
+    margin-bottom: 5px;
+}
+
+.user-list li.connected {
+    font-weight: bold;
+}
+
+.app > .screen{
+    display: none;
+}
+.app > .screen.active{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.screen .form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    max-width: 400px;
+}
+.screen .form-input{
+    width: 100%;
+    margin: 20px 0px;
+}
+.screen h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #111;
+    border-bottom: 4px solid #555;
+    padding: 5px 0px;
+    display: inline-block;
+}
+.screen .form-input label{
+    display: block;
+    margin-bottom: 5px;
+}
+.screen .form-input input{
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #555;
+    font-size: 16px;
+}
+.screen .form-input button{
+   padding: 10px 20px;
+   background: #111;
+   color: #eee;
+   font-size: 16px;
+   cursor: pointer;
+   outline: none;
+   border: none;
+}
+
+
+
+/*chat*/
+.chat-screen .header,.private .header{
+    background: #111;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px ;
+}
+.chat-screen .header .logo,.private .header .logo{
+    font-size: 18px;
+    color: #eee;
+    font-weight: 600;
+}
+.chat-screen .header button,.private .header button{
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    background: transparent;
+    color: #eee;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
+.chat-screen .header button:hover,.private .header button:hover{
+   transform: scale(1.1);
+   box-shadow: 1px 1px 4px 4px white;
+   border: 1px solid black;
+}
+/*reglage de room*/
+.chat-screen .messages,.public .messages,.private .messages,.public .messages{
+    width: 100%;
+    height: calc(100% - 100px);
+    background: #f5f5f5;
+    overflow: auto;
+    border: solid 2px #000000;
+    box-shadow: 1px 1px 3px 3px black;
+}
+.chat-screen .messages .message,.private .messages .message{
+    display: flex;
+    padding: 10px;
+}
+.chat-screen .messages .message > div,.private.messages .message > div{
+    max-width: 80%;
+    background: #fff;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.05);
+    padding: 10px;
+}
+.chat-screen .messages .message.my-message,.private .messages .message.my-message{
+    justify-content: flex-end;/*à droite*/
+}
+.chat-screen .messages .message.other-message,.private .messages .message.other-message{
+    justify-content: flex-start;/*à gauche*/
+}
+.chat-screen .messages .message .name,.private .messages .message .name{
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+}
+.chat-screen .messages .message .text,.private .messages .message .text{
+    word-wrap: break-word;
+}
+.chat-screen .messages .update,.private .messages .update{
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+}
+.chat-screen .typebox,.private .typebox{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+.chat-screen .typebox input,.private .typebox input{
+    flex: 1;
+    height: 50px;
+    font-size: 18px;
+}
+.chat-screen .typebox button,.private .typebox button{
+    width: 80px;
+    height: 100%;
+    background: #111;
+    color: #eee;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
